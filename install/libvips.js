@@ -47,6 +47,7 @@ const installationForced = !!(process.env.npm_config_sharp_install_force || proc
 const fail = function (err) {
   libvips.log(err);
   if (err.code === 'EACCES') {
+    libvips.log('BRUH');
     libvips.log('Are you trying to install as a root or sudo user?');
     libvips.log('- For npm <= v6, try again with the "--unsafe-perm" flag');
     libvips.log('- For npm >= v8, the user must own the directory "npm install" is run in');
